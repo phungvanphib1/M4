@@ -13,6 +13,8 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { ArticleComponent } from './article/article.component';
 import { LikeComponent } from './like/like.component';
+import { CustomPipe } from './custom.pipe';
+import { FPipesComponent } from './f-pipes/f-pipes.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { LikeComponent } from './like/like.component';
       ProductDetailComponent,
       ArticleComponent,
       LikeComponent,
+      CustomPipe,
+      FPipesComponent,
    ],
   imports: [
     BrowserModule,
