@@ -1,0 +1,19 @@
+<p>
+  d-event works!
+</p>
+
+<button class="btn btn-info" (click)="clickMe1()" >button1</button>
+<button class="btn btn-info" on-click="clickMe2()" >button2</button>
+<div on-click="divClick()" >
+  <button class="btn btn-success" on-click="btnClick()" >button3</button>
+</div>
+
+<h3>
+  tag
+</h3>
+<div class="from-group">
+  <input type="text" class="form-control" name="tag" (keyup)="onKeyUp($event)">
+</div>
+<div class="from-group">
+  <div id="result-tag"></div>
+</div>

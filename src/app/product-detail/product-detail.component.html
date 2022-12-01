@@ -1,0 +1,19 @@
+<h1>
+  chưa xong
+</h1>
+<form action="" (ngSubmit)="editProduct(detailForm)" #detailForm="ngForm" >
+    <div class="mb-3">
+      <label for="productName" class="form-label">Tên</label>
+      <input type="text"
+        class="form-control" ngModel name="productName" value="{{product.productName}}" ngModel id="productName" aria-describedby="productHelpId" placeholder="productName">
+      <small id="productNameHelpId" class="form-text text-muted">Product name</small>
+    </div>
+    <div class="mb-3">
+      <label for="productNode" class="form-label">Mô tả</label>
+      <input type="text" [(ngModel)]="product.productNode"
+        class="form-control" name="productNode" id="productNode" aria-describedby="productHelpId" placeholder="productNode">
+      <small id="productNodeHelpId" class="form-text text-muted">Product Node</small>
+    </div>
+  </form>
+  <button class="btn btn-primary">Cập nhật</button>
+  <p>{{product | json}}</p>

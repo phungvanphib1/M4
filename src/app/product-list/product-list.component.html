@@ -1,0 +1,26 @@
+<div class="card text-start">
+  <div class="card-head">
+    Danh sách sản phẩm
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-primary">
+        <thead>
+          <tr>
+            <th scope="col">Tên</th>
+            <th scope="col">mô tả</th>
+            <th scope="col">Tùy chỉnh</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="" *ngFor="let product of products" >
+            <td scope="row">{{product.productName}}</td>
+            <td>{{product.productNode}}</td>
+            <td>sửa xóa</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,9 @@
+<h2>Thú cưng</h2>
+<label for="exampleInputEmail1" class="form-label">Tên</label>
+<input  class="form-control" type="text" [(ngModel)]="pet.name">
+<br >
+<label for="exampleInputEmail1" class="form-label">Ảnh</label>
+<input class="form-control" type="url" [(ngModel)]="pet.image">
+<br >
+<h3>Tên: {{pet.name}}</h3>
+<img [src]="pet.image" style="max-width: 50%">

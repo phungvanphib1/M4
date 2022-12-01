@@ -1,0 +1,7 @@
+<h2>Font size editor</h2>
+<button (click)="changeFontSize()" class="btn btn-primary">heloo</button>
+<div>
+  <label>Enter font size (px):</label>
+  <input type="range" min="1" max="100" value="18" [(ngModel)]="fontSize" >
+</div>
+<p class="output" [style.fontSize.px]="fontSize"> <img src="" alt=""> {{fontSize}} Hí </p>
