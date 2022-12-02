@@ -1,0 +1,8 @@
+<p>
+  output-property works!
+</p>
+<app-output-child (newItemEvent)="addItem($event)" ></app-output-child>
+<div *ngFor="let item of items">
+  <h3>{{item}}</h3>
+</div>
+

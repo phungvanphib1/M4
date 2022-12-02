@@ -14,9 +14,8 @@ export class ProductDetailComponent implements OnInit {
    }
 
    editProduct(from: NgForm){
-    // console.log(form.value);
+    console.log(from.value);
     this.product.productNode = from.value.productNode;
-
    }
 
   ngOnInit() {

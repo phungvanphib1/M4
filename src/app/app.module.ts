@@ -15,9 +15,13 @@ import { ArticleComponent } from './article/article.component';
 import { LikeComponent } from './like/like.component';
 import { CustomPipe } from './custom.pipe';
 import { FPipesComponent } from './f-pipes/f-pipes.component';
+import { InputPropertyComponent } from './input-property/input-property.component';
+import { InputChildComponent } from './input-child/input-child.component';
+import { OutputChildComponent } from './output-child/output-child.component';
+import { OutputPropertyComponent } from './output-property/output-property.component';
 
 @NgModule({
-  declarations: [
+  declarations: [				
     AppComponent,
       FontZideEditorComponent,
       PetComponent,
@@ -31,6 +35,10 @@ import { FPipesComponent } from './f-pipes/f-pipes.component';
       LikeComponent,
       CustomPipe,
       FPipesComponent,
+      InputPropertyComponent,
+      InputChildComponent,
+      OutputChildComponent,
+      OutputPropertyComponent
    ],
   imports: [
     BrowserModule,
