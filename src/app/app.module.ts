@@ -19,9 +19,11 @@ import { InputPropertyComponent } from './input-property/input-property.componen
 import { InputChildComponent } from './input-child/input-child.component';
 import { OutputChildComponent } from './output-child/output-child.component';
 import { OutputPropertyComponent } from './output-property/output-property.component';
+import { NgIfComponent } from './ng-if/ng-if.component';
+import { GameComponent } from './game/game.component';
 
 @NgModule({
-  declarations: [				
+  declarations: [	
     AppComponent,
       FontZideEditorComponent,
       PetComponent,
@@ -38,7 +40,9 @@ import { OutputPropertyComponent } from './output-property/output-property.compo
       InputPropertyComponent,
       InputChildComponent,
       OutputChildComponent,
-      OutputPropertyComponent
+      OutputPropertyComponent,
+      NgIfComponent,
+      GameComponent
    ],
   imports: [
     BrowserModule,
