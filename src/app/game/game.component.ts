@@ -11,17 +11,14 @@ export class GameComponent implements OnInit {
   public point: number = 0;
   public numbers: number[] = [];
   public timeleft: number = 0;
-  public timeStart: any = false;
-  public maxTime: number = 500;
-  show: boolean = true;
+  public timeStart: any =  false;
+  public maxTime: number = 1000;
   constructor() {}
 
   ngOnInit(): void {
     this.timeleft = this.maxTime;
     for (let i = 1; i <= 100; i++) {
       this.numbers.push(i);
-      //xao tron mang
-      this.numbers = this.shuffle(this.numbers);
     }
   }
   ngDoCheck(): void {
@@ -54,7 +51,7 @@ export class GameComponent implements OnInit {
     this.point = 0;
     this.timeleft = this.maxTime;
     clearInterval(this.timeStart);
-    this.timeStart = null;
+    this.timeStart = false;
   }
   play(number: number): void {
     if (number == this.next) {
@@ -72,13 +69,17 @@ export class GameComponent implements OnInit {
     let currentIndex = array.length,
       randomIndex;
 
-    // While there remain elements to shuffle.
+    // yếu tố để xáo trộn
     while (currentIndex != 0) {
-      // Pick a remaining element.
+      // chọn đúng
       randomIndex = Math.floor(Math.random() * currentIndex);
       currentIndex--;
-      // And swap it with the current element.
-      [array[currentIndex], array[randomIndex]] = [
+      // trao đổi với các phần tử còn lại
+      [
+       array[currentIndex],
+       array[randomIndex]
+      ] =
+      [
         array[randomIndex],
         array[currentIndex],
       ];

@@ -2,46 +2,47 @@
   <header class="row">
     <div class="col">
       <h1>Xin chào mấy cưng</h1>
-       <p>Tên: {{student.fullname}}</p>
+      <p>Tên: {{student.fullname}}</p>
       <p>Tuổi: {{student.age}}</p>
     </div>
   </header>
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs">
+    <li>
+      <button class="nav-link" type="button" [routerLink]="['/productlist']">Product list</button>
+    </li>
+    <li>
+      <button class="nav-link" type="button" [routerLink]="['/fontsize-edit']">Tăng giảm form</button>
+    </li>
+    <li>
+      <button class="nav-link" type="button" [routerLink]="['/game']">Game</button>
+    </li>
+    <li>
+      <button class="nav-link" type="button" [routerLink]="['/pet']">Thú cưng</button>
+    </li>
+    <li>
+      <button class="nav-link" type="button" [routerLink]="['/event']">Event</button>
+    </li>
+    <li>
+      <button class="nav-link" type="button" [routerLink]="['/article']">Bài Viết</button>
+    </li>
+    <li>
+      <button class="nav-link" type="button" [routerLink]="['allThucHanh']">Thực hành khác</button>
+    </li>
+
+  </ul>
+  <!-- Tab panes -->
   <section class="row">
     <div class="col">
-
-      <app-font-zide-editor></app-font-zide-editor>
-      <hr>
-      <app-product></app-product>
-      <hr>
-      <app-pet></app-pet>
-      <hr>
-      <app-b-property></app-b-property>
-      <hr>
-      <app-c-property></app-c-property>
-      <hr>
-      <app-d-event></app-d-event>
-      <hr>
-      <app-product-list></app-product-list>
-      <hr>
-      <app-product-detail></app-product-detail>
-      <hr>
-      <app-article></app-article>
-      <hr>
-      <app-f-pipes></app-f-pipes>
-      <hr>
-      <h3>@input</h3>
-      <app-input-property></app-input-property>
-      <hr>
-      <h3>@uotput</h3>
-      <app-output-property></app-output-property>
-      <hr>
-      <app-game></app-game>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-
+      <router-outlet></router-outlet>
+      <!-- <app-product-list></app-product-list> -->
+      <!-- <app-product-detail></app-product-detail> -->
+      <!-- <app-font-zide-editor></app-font-zide-editor> -->
+      <!-- <app-pet></app-pet> -->
+      <!-- <app-game></app-game> -->
+      <!-- <app-d-event></app-d-event> -->
+      <!-- <app-article></app-article> -->
+      <!-- <app-b-property></app-b-property> -->
     </div>
   </section>
 </div>

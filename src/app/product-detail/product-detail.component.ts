@@ -13,9 +13,10 @@ export class ProductDetailComponent implements OnInit {
     this.product = new Product('', '');
    }
 
-   editProduct(from: NgForm){
-    console.log(from.value);
-    this.product.productNode = from.value.productNode;
+   changeDetail(form: NgForm){
+    console.log(form.value);
+    this.product.productName = form.value.productName;
+    this.product.productName = this.product.productName.toUpperCase();
    }
 
   ngOnInit() {

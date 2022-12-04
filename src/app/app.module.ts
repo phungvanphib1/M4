@@ -21,9 +21,25 @@ import { OutputChildComponent } from './output-child/output-child.component';
 import { OutputPropertyComponent } from './output-property/output-property.component';
 import { NgIfComponent } from './ng-if/ng-if.component';
 import { GameComponent } from './game/game.component';
+import { StarComponent } from './star/star.component';
+
+//route
+import { RouterModule, Routes } from '@angular/router';
+
+//route
+const routes: Routes = [
+  { path:  'productlist', component: ProductListComponent  },
+  { path:  'fontsize-edit', component: FontZideEditorComponent  },
+  { path:  'pet', component: PetComponent  },
+  { path:  'game', component: GameComponent  },
+  { path:  'event', component: DEventComponent  },
+  { path:  'article', component: ArticleComponent  },
+  { path:  'allThucHanh', component: BPropertyComponent  },
+]
+
 
 @NgModule({
-  declarations: [	
+  declarations: [
     AppComponent,
       FontZideEditorComponent,
       PetComponent,
@@ -42,11 +58,14 @@ import { GameComponent } from './game/game.component';
       OutputChildComponent,
       OutputPropertyComponent,
       NgIfComponent,
-      GameComponent
+      GameComponent,
+      StarComponent
    ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    //route
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
