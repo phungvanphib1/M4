@@ -3,8 +3,8 @@
     <div class="mb-3">
       <label for="productName" class="form-label">Tên</label>
       <input type="text"
-        class="form-control" ngModel name="productName" id="productName"
-        value="{{product.productName}}" aria-describedby="productName" placeholder="productName">
+        class="form-control" [(ngModel)]="product.productName" name="productName" id="productName"
+         aria-describedby="productName" placeholder="productName">
       <small id="productName" class="form-text text-muted">Product name</small>
     </div>
     <div class="mb-3">

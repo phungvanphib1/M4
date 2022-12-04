@@ -18,11 +18,14 @@
             <td scope="row">{{product.productName}}</td>
             <td>{{product.productNode}}</td>
             <td><app-star [rating]="4"(ratingClicked)="changeStarRating($event)" ></app-star></td>
-            <td>sửa xóa</td>
+            <td>
+              <a [routerLink]="[ 'productdetail/'+ product.productName  ]">sửa</a>
+               xóa
+              </td>
           </tr>
         </tbody>
       </table>
-      <app-product-detail></app-product-detail>
+      <router-outlet></router-outlet>
     </div>
 
   </div>

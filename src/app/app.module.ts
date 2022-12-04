@@ -25,16 +25,23 @@ import { StarComponent } from './star/star.component';
 
 //route
 import { RouterModule, Routes } from '@angular/router';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { AdminRoutes } from './router/admin.routing';
+import { NotFoundComponent } from './error/not-found/not-found.component';
 
 //route
 const routes: Routes = [
   { path:  'productlist', component: ProductListComponent  },
+  { path:  'productlist/productdetail/:id', component: ProductDetailComponent  },
   { path:  'fontsize-edit', component: FontZideEditorComponent  },
   { path:  'pet', component: PetComponent  },
   { path:  'game', component: GameComponent  },
   { path:  'event', component: DEventComponent  },
   { path:  'article', component: ArticleComponent  },
   { path:  'allThucHanh', component: BPropertyComponent  },
+  { path:  '', pathMatch: 'full', redirectTo: '/'},
+  { path:  '**', component: NotFoundComponent  },
+
 ]
 
 
@@ -59,12 +66,14 @@ const routes: Routes = [
       OutputPropertyComponent,
       NgIfComponent,
       GameComponent,
-      StarComponent
+      StarComponent,
+      DashboardComponent
    ],
   imports: [
     BrowserModule,
     FormsModule,
     //route
+    AdminRoutes,
     RouterModule.forRoot(routes)
   ],
   providers: [],
