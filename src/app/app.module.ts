@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { FontZideEditorComponent } from './font-zide-editor/font-zide-editor.component';
 import { PetComponent } from './pet/pet.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ProductComponent } from './product/product.component';
 import { BPropertyComponent } from './b-property/b-property.component';
 import { CPropertyComponent } from './c-property/c-property.component';
@@ -23,11 +23,15 @@ import { NgIfComponent } from './ng-if/ng-if.component';
 import { GameComponent } from './game/game.component';
 import { StarComponent } from './star/star.component';
 
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { NotFoundComponent } from './error/not-found/not-found.component';
+import { LoginComponent } from './login/login.component';
+import { ProductAddComponent } from './product-add/product-add.component';
 //route
 import { RouterModule, Routes } from '@angular/router';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { AdminRoutes } from './router/admin.routing';
-import { NotFoundComponent } from './error/not-found/not-found.component';
+import { TodoComponent } from './todo/todo.component';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 
 //route
 const routes: Routes = [
@@ -39,6 +43,9 @@ const routes: Routes = [
   { path:  'event', component: DEventComponent  },
   { path:  'article', component: ArticleComponent  },
   { path:  'allThucHanh', component: BPropertyComponent  },
+  { path:  'productadd', component: ProductAddComponent  },
+  { path:  'login', component: LoginComponent  },
+  { path:  'reactiveform', component: ReactiveFormComponent  },
   { path:  '', pathMatch: 'full', redirectTo: '/'},
   { path:  '**', component: NotFoundComponent  },
 
@@ -67,11 +74,16 @@ const routes: Routes = [
       NgIfComponent,
       GameComponent,
       StarComponent,
-      DashboardComponent
+      DashboardComponent,
+      LoginComponent,
+      ProductAddComponent,
+      TodoComponent,
+      ReactiveFormComponent
    ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     //route
     AdminRoutes,
     RouterModule.forRoot(routes)

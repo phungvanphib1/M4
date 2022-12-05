@@ -1,0 +1,84 @@
+<div class="card">
+  <div class="card-header">
+    <h1>Đăng ký</h1>
+  </div>
+  <form (ngSubmit)="register()" [formGroup]="customerForm">
+    <div class="card-body">
+      <div class="mb-3">
+        <label for="" class="form-label">Email</label>
+        <input type="text" formControlName="email" class="form-control" name="email" id="email" aria-describedby="emailHId" placeholder="email">
+        <div *ngIf="customerForm.invalid && (customerForm.dirty || customerForm.touched)" class="alert">
+            <div class="form-text text-danger" *ngIf="customerForm.get('email')?.errors?.['required'] ">Bắt Buộc nhập trường này</div>
+            <div class="form-text text-danger" *ngIf="customerForm.get('email')?.errors?.['minLength'] ">Trường này bắt buộc lớn hơn 8 kí tự</div>
+            <div class="form-text text-danger" *ngIf="customerForm.get('email')?.errors?.['email'] ">Định dạng mail chưa đúng ví dụ: phi@gmail.com</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label for="" class="form-label">password</label>
+          <input type="password" formControlName="password" class="form-control" name="password" #pw id="password" aria-describedby="passwordHId"
+            placeholder="password">
+          <small id="passwordHId" *ngIf="customerForm.invalid && (customerForm.dirty || customerForm.touched) &&
+           customerForm.get('password')?.errors?.['required'] " class="form-text text-danger">Bắt buộc nhập mật khẩu</small>
+        </div>
+        <div class="col">
+          <label for="" class="form-label">confirm password</label>
+          <input type="password" formControlName="confirmpassword" [ngClass]='confirmPasswordClass' #cpw (keyup)='checkPasswords(pw.value, cpw.value)' class="form-control" name="confirmpassword" id="confirmpassword"
+            aria-describedby="passwordHId" placeholder="password">
+            <div *ngIf='!passwordsMatching && isConfirmPasswordDirty'>
+              Passwords did not match
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label for="country" class="form-label">City</label>
+          <select formControlName="country" class="form-select form-select-sm" name="country" id="country">
+            <option selected>--vui lòng chon quốc gia--</option>
+            <option value="vietNam">Việt Nam</option>
+            <option value="Lao">Lào</option>
+            <option value="camBuChia">Cam Bu Chia</option>
+          </select>
+          <div  *ngIf="customerForm.invalid && (customerForm.dirty || customerForm.touched) &&
+           customerForm.get('country')?.errors?.['required'] " class="form-text text-danger">Bắt buộc nhập quốc gia</div>
+
+        </div>
+        <div class="col">
+          <label for="" class="form-label">age</label>
+          <input type="number" formControlName="age" class="form-control" name="age" id="age" placeholder="Age">
+          <div  *ngIf="customerForm.invalid && (customerForm.dirty || customerForm.touched) &&
+           customerForm.get('age')?.errors?.['required'] " class="form-text text-danger">Bắt buộc nhập quốc gia</div>
+        </div>
+      </div>
+      <div class="row">
+        <label for="" class="form-label">Gender</label>
+        <div class="col">
+          <div class="form-check">
+            <input formControlName="gender"  class="form-check-input" value="nam" type="radio" name="gender" id="gender" checked>
+            <label class="form-check-label" for="gender">Nam</label>
+          </div>
+          <div class="form-check">
+            <input formControlName="gender"  class="form-check-input" value="nu" type="radio" name="gender" id="gender">
+            <label class="form-check-label" for="">Nữ</label>
+          </div>
+          <div  *ngIf="customerForm.invalid && (customerForm.dirty || customerForm.touched) &&
+           customerForm.get('gender')?.errors?.['required'] " class="form-text text-danger">Bắt buộc nhập quốc gia</div>
+        </div>
+        <div class="col">
+          <label for="" class="form-label">Phone</label>
+          <input formControlName="phone" type="text" class="form-control" name="phone" id="phone" placeholder="Phone">
+          <div *ngIf="customerForm.invalid && (customerForm.dirty || customerForm.touched)" class="alert">
+            <div class="form-text text-danger" *ngIf="customerForm.get('phone')?.errors?.['required'] ">Bắt Buộc nhập trường này</div>
+            <div class="form-text text-danger" *ngIf="customerForm.get('phone')?.errors?.['pattern'] ">định dạng số điện thoại chưa đúng +84</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer text-muted">
+      <button type="submit" class="btn btn-primary">Button</button>
+    </div>
+  </form>
+</div>
+<br>
+<br>
+<br>

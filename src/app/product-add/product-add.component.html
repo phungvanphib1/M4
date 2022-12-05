@@ -1,0 +1,37 @@
+<h1>
+  TH : Reactive form
+</h1>
+<h3>chưa xử lí logic</h3>
+<form (ngSubmit)="onAddProduct()" [formGroup]="productForm">
+  <div class="card">
+    <div class="card-header">
+      Add new Product
+    </div>
+    <div class="card-body">
+      <div class="mb-3">
+        <label for="" class="form-label">Name Product</label>
+        <input type="text" formControlName="productName" class="form-control" name="productName" id="productName"
+          aria-describedby="productNameHid" placeholder="productName">
+
+          <div *ngIf="productForm.invalid && (productForm.dirty || productForm.touched)"
+    class="alert">
+        <small *ngIf="!productForm.get('productName')?.valid && productForm.get('productName')?.touched &&
+          productForm.get('productName')?.errors?.['minLength']" class="form-text text-muted">productName lớn hơn</small>
+        <small *ngIf="!productForm.get('productName')?.valid && productForm.get('productName')?.touched &&
+         productForm.get('productName')?.errors?.['minLength']" class="form-text text-muted">productName Phải nhập</small>
+          </div>
+
+      </div>
+      <div class="mb-3">
+        <label for="" class="form-label">Note Product</label>
+        <input type="text" formControlName="productNote" class="form-control" name="productNote" id="productNote"
+          aria-describedby="productNoteHid" placeholder="productNote">
+        <small *ngIf="!productForm.get('productNote')?.valid && productForm.get('productNote')?.touched"
+          id="productNoteHid" class="form-text text-muted">productNote không hợp lệ</small>
+      </div>
+    </div>
+    <div class="card-footer text-muted">
+      <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+  </div>
+</form>
