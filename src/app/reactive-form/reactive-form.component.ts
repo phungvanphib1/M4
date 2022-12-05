@@ -36,10 +36,8 @@ checkPasswords(pw: string, cpw: string) {
     this.isConfirmPasswordDirty = true;
     if (pw === cpw) {
       this.passwordsMatching = true;
-      this.confirmPasswordClass = 'form-control is-valid';
     } else {
       this.passwordsMatching = false;
-      this.confirmPasswordClass = 'form-control is-invalid'
     }
   }
 
