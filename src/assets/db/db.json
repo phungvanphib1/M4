@@ -1,16 +1,3 @@
 {
-  "categories": [
-    {
-      "id": "1",
-      "name": "new value"
-    },
-    {
-      "id": "3",
-      "name": "Alejandrin Terry"
-    },
-    {
-      "id": "5",
-      "name": "Phùng Văn"
-    }
-  ]
+  "categories": []
 }

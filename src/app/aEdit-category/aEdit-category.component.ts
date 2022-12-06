@@ -31,6 +31,8 @@ export class AEditCategoryComponent implements OnInit {
     this.categoryService.update(this.id, this.category).subscribe(data=>{
       console.log(data);
       alert('Chỉnh sửa thành công')
+
+        //định hướng bằng Url
       document.location = 'http://localhost:4200/listCate'
     })
   }

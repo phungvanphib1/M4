@@ -9,5 +9,16 @@
 </head>
 <body>
   <app-root></app-root>
+  <script>
+       if(Session.has('message')){
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: "{{ Session::get('message') }}",
+            showConfirmButton: false,
+            timer: 1500
+        })
+       }
+  </script>
 </body>
 </html>

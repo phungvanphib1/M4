@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router  } from '@angular/router';
 import { Category } from '../common/category';
 import { CategoryService } from '../services/category.service';
 
@@ -11,9 +11,10 @@ import { CategoryService } from '../services/category.service';
   styleUrls: ['./aDelete-category.component.css']
 })
 export class ADeleteCategoryComponent implements OnInit {
+
   category!: Category
   id: any;
-  constructor(private httpClient: HttpClient, private route:ActivatedRoute, private categoryService: CategoryService) {
+  constructor(private router: Router, private httpClient: HttpClient, private route:ActivatedRoute, private categoryService: CategoryService) {
     this.id = route.snapshot.params['id']
    }
 
@@ -24,11 +25,11 @@ export class ADeleteCategoryComponent implements OnInit {
   }
   deleteCate(){
     this.categoryService.delete(this.id).subscribe(data=>{
+      alert('Xóa Thành công')
+      this.router.navigate(['listCate'])
       console.log(data);
-      alert('Xóa thành công')
-      document.location = 'http://localhost:4200/listCate'
-    },(e: any) => {
-      console.log(e);
+
+      // document.location.href = 'http://localhost:4200/listCate'
     })
   }
 

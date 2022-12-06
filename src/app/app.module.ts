@@ -58,7 +58,7 @@ const routes: Routes = [
 
 
 @NgModule({
-  declarations: [		
+  declarations: [
     AppComponent,
       FontZideEditorComponent,
       PetComponent,
@@ -93,6 +93,7 @@ const routes: Routes = [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    
     //route
     AdminRoutes,
     HttpClientModule,
