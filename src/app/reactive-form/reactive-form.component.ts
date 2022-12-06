@@ -18,7 +18,7 @@ export class ReactiveFormComponent implements OnInit {
       'country' : new FormControl('',[Validators.required]),
       'age' : new FormControl('',[Validators.required]),
       'gender' : new FormControl('',[Validators.required]),
-      'phone' : new FormControl('',[Validators.required, Validators.pattern('[/^\+84\d{9,10}$/]*')]),
+      'phone' : new FormControl('',[Validators.required, Validators.pattern('[/^\+84\d{9,15}$/]*')]),
     });
   }
   register(){
@@ -36,8 +36,10 @@ checkPasswords(pw: string, cpw: string) {
     this.isConfirmPasswordDirty = true;
     if (pw === cpw) {
       this.passwordsMatching = true;
+      this.confirmPasswordClass = 'form-control is-valid';
     } else {
       this.passwordsMatching = false;
+      this.confirmPasswordClass = 'form-control is-invalid'
     }
   }
 

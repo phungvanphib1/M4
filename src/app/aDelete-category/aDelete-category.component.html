@@ -1,0 +1,16 @@
+<div *ngIf="category">
+<div class="container" style= "width: 400px;">
+  <div class="row">
+    <div class="card-header">
+      <h1 class= "card-title text-center"><b>Xóa Category</b></h1>
+    </div>
+    <div class="card-body">
+       <p> Tên Sản Phẩm: {{category.name}} </p>
+    </div>
+    <div class="card-footer d-flex justify-content-end">
+      <button type="button" on-click= "deleteCate()" class="btn btn-danger" >Xóa</button>
+      <button type="button" [routerLink]="['/listCate']" class="btn btn-primary mx-2" >Quay lại</button>
+    </div>
+  </div>
+</div>
+</div>

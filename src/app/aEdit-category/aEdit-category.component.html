@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col">
+    <form>
+    <div class="card" *ngIf="category">
+      <div class="card-header">
+        Add category
+      </div>
+      <div class="card-body">
+        <div class="mb-3">
+          <label for="id" class="form-label">Category Id</label>
+          <input type="text" [(ngModel)]="category.id"
+            class="form-control" name="id" id="id" aria-describedby="idHid" placeholder="Category Id">
+          <small id="idHid" class="form-text text-muted">CateID</small>
+        </div>
+        <div class="mb-3">
+          <label for="name" class="form-label">Category Name</label>
+          <input type="text" [(ngModel)]="category.name"
+            class="form-control" name="name" id="name" aria-describedby="nameHid" placeholder="Category name">
+          <small id="nameHid" class="form-text text-muted">Catename</small>
+        </div>
+      </div>
+      <div class="card-footer text-muted">
+        <button (click)="update()" type="button" class="btn btn-outline-primary" >Save</button>
+      </div>
+    </div>
+  </form>
+  </div>
+</div>

@@ -32,6 +32,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { AdminRoutes } from './router/admin.routing';
 import { TodoComponent } from './todo/todo.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { AddCategoryComponent } from './add-category/add-category.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AListCategoryComponent } from './aList-category/aList-category.component';
+import { AEditCategoryComponent } from './aEdit-category/aEdit-category.component';
+import { ADeleteCategoryComponent } from './aDelete-category/aDelete-category.component';
 
 //route
 const routes: Routes = [
@@ -53,7 +58,7 @@ const routes: Routes = [
 
 
 @NgModule({
-  declarations: [
+  declarations: [		
     AppComponent,
       FontZideEditorComponent,
       PetComponent,
@@ -78,7 +83,11 @@ const routes: Routes = [
       LoginComponent,
       ProductAddComponent,
       TodoComponent,
-      ReactiveFormComponent
+      ReactiveFormComponent,
+      AddCategoryComponent,
+      AListCategoryComponent,
+      AEditCategoryComponent,
+      ADeleteCategoryComponent
    ],
   imports: [
     BrowserModule,
@@ -86,6 +95,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     //route
     AdminRoutes,
+    HttpClientModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],
