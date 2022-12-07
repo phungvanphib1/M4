@@ -37,6 +37,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { AListCategoryComponent } from './aList-category/aList-category.component';
 import { AEditCategoryComponent } from './aEdit-category/aEdit-category.component';
 import { ADeleteCategoryComponent } from './aDelete-category/aDelete-category.component';
+import { SharedModule } from './module/shared/shared.module';
+import { ImageGalleryModule, ImageRoutes } from './image-gallery/image-gallery.module';
+import { GalleryConfig } from './image-gallery/token';
 
 //route
 const routes: Routes = [
@@ -58,48 +61,53 @@ const routes: Routes = [
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-      FontZideEditorComponent,
-      PetComponent,
-      ProductComponent,
-      BPropertyComponent,
-      CPropertyComponent,
-      DEventComponent,
-      ProductListComponent,
-      ProductDetailComponent,
-      ArticleComponent,
-      LikeComponent,
-      CustomPipe,
-      FPipesComponent,
-      InputPropertyComponent,
-      InputChildComponent,
-      OutputChildComponent,
-      OutputPropertyComponent,
-      NgIfComponent,
-      GameComponent,
-      StarComponent,
-      DashboardComponent,
-      LoginComponent,
-      ProductAddComponent,
-      TodoComponent,
-      ReactiveFormComponent,
-      AddCategoryComponent,
-      AListCategoryComponent,
-      AEditCategoryComponent,
-      ADeleteCategoryComponent
+    declarations: [
+        AppComponent,
+        FontZideEditorComponent,
+        PetComponent,
+        ProductComponent,
+        BPropertyComponent,
+        CPropertyComponent,
+        DEventComponent,
+        ProductListComponent,
+        ProductDetailComponent,
+        ArticleComponent,
+        LikeComponent,
+        CustomPipe,
+        FPipesComponent,
+        InputPropertyComponent,
+        InputChildComponent,
+        OutputChildComponent,
+        OutputPropertyComponent,
+        NgIfComponent,
+        GameComponent,
+        StarComponent,
+        DashboardComponent,
+        LoginComponent,
+        ProductAddComponent,
+        TodoComponent,
+        ReactiveFormComponent,
+        AddCategoryComponent,
+        AListCategoryComponent,
+        AEditCategoryComponent,
+        ADeleteCategoryComponent,
    ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    ReactiveFormsModule,
-    
-    //route
-    AdminRoutes,
-    HttpClientModule,
-    RouterModule.forRoot(routes)
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    providers: [{provide: GalleryConfig, useValue: 3}],
+    bootstrap: [AppComponent],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        ReactiveFormsModule,
+        SharedModule,
+
+        //route
+        ImageRoutes,
+        AdminRoutes,
+        HttpClientModule,
+        RouterModule.forRoot(routes),
+         //model khác
+         ImageGalleryModule
+    ]
+
 })
 export class AppModule { }

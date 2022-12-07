@@ -4,6 +4,7 @@ import { ADeleteCategoryComponent } from '../aDelete-category/aDelete-category.c
 import { AEditCategoryComponent } from '../aEdit-category/aEdit-category.component';
 import { AListCategoryComponent } from '../aList-category/aList-category.component';
 import { DashboardComponent } from '../dashboard/dashboard.component';
+// import { ImageGalleryComponent } from '../image-gallery/image-gallery.component';
 import { AuthGuard } from './auth-guard';
 
 const routes: Routes = [
@@ -12,6 +13,7 @@ const routes: Routes = [
    { path:  'listCate', component: AListCategoryComponent  },
    { path:  'editCate/:id', component: AEditCategoryComponent  },
    { path:  'deleteCate/:id', component: ADeleteCategoryComponent  },
+
 ];
 
 export const AdminRoutes = RouterModule.forChild(routes);
